@@ -51,16 +51,19 @@ def plot1():
     # y = a*x^2+bx=c
     # a należy do (0,10)
     a = 1
-    b = 0
-    c = 0
+    b = 0.1
+    c = 0.1
 
     plot.xlabel("x")
     plot.ylabel(r"$y=ax^2+bx+c$")
 
     x = np.linspace(-10, 10, 100)
-    y = a * x ** 2 + b * x + c
 
-    plot.plot(x, y)
+    for a in range(1,10):
+        y = a * x ** 2 + a * x + c
+        plot.plot(x, y, label=rf"$y={a}x^2+{b}x+{c}$")
+
+    plot.legend()
     plot.show()
 
 
