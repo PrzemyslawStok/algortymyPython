@@ -20,7 +20,7 @@ def calc(a: np.array, b: np.array):
     print(f"{a}/{b}={a / b}")
 
 
-if __name__ == "__main__":
+def fun1():
     a = 10.0 * np.ones([10_000_000], dtype=np.float64)
     b = 7 * np.ones([10_000_000], dtype=np.float64)
 
@@ -35,3 +35,18 @@ if __name__ == "__main__":
     end = timeit.default_timer()
 
     print(f"list time: {(end - start):0.5f}s")
+
+
+def simplePlot():
+    x = np.linspace(0, 10, 100)
+    y = x/np.sin(x)
+
+    plot.xlabel("x")
+    plot.ylabel(r"$y=\frac{x}{sin(x)}$")
+    plot.plot(x, y)
+    plot.show()
+
+
+if __name__ == "__main__":
+    # fun1()
+    simplePlot()
