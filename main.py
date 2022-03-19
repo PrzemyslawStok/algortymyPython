@@ -39,10 +39,27 @@ def fun1():
 
 def simplePlot():
     x = np.linspace(0, 10, 100)
-    y = x/np.sin(x)
+    y = x / np.sin(x)
 
     plot.xlabel("x")
     plot.ylabel(r"$y=\frac{x}{sin(x)}$")
+    plot.plot(x, y, 'orange')
+    plot.show()
+
+
+def plot1():
+    # y = a*x^2+bx=c
+    # a należy do (0,10)
+    a = 1
+    b = 0
+    c = 0
+
+    plot.xlabel("x")
+    plot.ylabel(r"$y=ax^2+bx+c$")
+
+    x = np.linspace(-10, 10, 100)
+    y = a * x ** 2 + b * x + c
+
     plot.plot(x, y)
     plot.show()
 
@@ -50,3 +67,4 @@ def simplePlot():
 if __name__ == "__main__":
     # fun1()
     simplePlot()
+    plot1()
