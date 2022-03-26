@@ -59,7 +59,7 @@ def plot1():
 
     x = np.linspace(-10, 10, 100)
 
-    for a in range(1,10):
+    for a in range(1, 10):
         y = a * x ** 2 + a * x + c
         plot.plot(x, y, label=rf"$y={a}x^2+{b}x+{c}$")
 
@@ -67,7 +67,53 @@ def plot1():
     plot.show()
 
 
+def plot2():
+    # y = a*sin(b*x)+c
+    # a należy do (0.1,5) - 10 przykładów
+    a = 1
+    b = 2.0
+    c = 0.1
+
+    a_space = np.linspace(0.1, 5, 10)
+    x = np.linspace(-10, 10, 1000)
+
+    for a in a_space:
+        y = a * np.sin(b * x) + a
+        c = a
+        plot.plot(x, y, label=rf"$y={a:0.1f}sin({b}x)+{c:0.1f}$")
+
+    plot.legend()
+    plot.show()
+
+
+def f1(x):
+    return x ** 2 + 1
+
+
+def simple_map():
+    a = [1, 2, 3, 4, 5, 6, 7, 8]
+    b = map(f1, a)
+    print(list(b))
+
+    f2 = lambda x: x ** 3
+    print(f2(3))
+
+    b = map(lambda x: x + 1, a)
+    print(list(b))
+
+    nazwiska = map(lambda x: f"Przemysław Stokłosa {x}", a)
+    print(list(nazwiska))
+
+
+def map_numpy():
+    pass
+
+
 if __name__ == "__main__":
     # fun1()
-    simplePlot()
-    plot1()
+    # simplePlot()
+    # plot1()
+    # plot2()
+
+    # simple_map()
+    map_numpy()
