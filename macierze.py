@@ -12,9 +12,9 @@ def macierze1():
     print(np.eye(5))
 
     for i in range(len(A)):
-        print(A[i])
+        A[i] = 5
 
-
+    print(A)
 
 
 if __name__ == "__main__":
