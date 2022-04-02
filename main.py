@@ -87,6 +87,7 @@ def plot2():
 
 
 def f1(x):
+    print(x)
     return x ** 2 + 1
 
 
@@ -105,8 +106,29 @@ def simple_map():
     print(list(nazwiska))
 
 
+def f2(n: int):
+    return lambda x: n * x
+
+def map1():
+    f2_1 = f2(1)
+    f2_2 = f2(2)
+
+    print(f2_1(1))
+    print(f2_2(1))
+
+    a = []
+
+    for n in range(1, 10):
+        a.append(f2(n))
+
+    print(a)
+
+
 def map_numpy():
-    pass
+    a = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+    # print(a * a)
+    np.vectorize(f1)
+    print(f1(a))
 
 
 if __name__ == "__main__":
@@ -116,4 +138,6 @@ if __name__ == "__main__":
     # plot2()
 
     # simple_map()
-    map_numpy()
+    # map_numpy()
+
+    map1()
