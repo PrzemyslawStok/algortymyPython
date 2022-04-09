@@ -31,6 +31,13 @@ def funkcja2():
     print("")
 
     print(A[:, 2:5])
+    print("")
+
+    # zad 12-77
+    print(A[:, 2:])
+
+    # zad 35-89
+    # zad 25-79
 
 
 if __name__ == "__main__":
