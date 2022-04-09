@@ -18,12 +18,21 @@ def funkcja1():
 
     print(list(A[2:9]))
     print(list(A[:8]))
+    print(A[5:-2])
 
 
 def funkcja2():
     A = np.arange(0, 100).reshape([10, -1])
     print(A)
+    print("")
+
+    print(A[2, :])
+    print(A[2:5, :])
+    print("")
+
+    print(A[:, 2:5])
 
 
 if __name__ == "__main__":
-    funkcja1()
+    # funkcja1()
+    funkcja2()
