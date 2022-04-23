@@ -2,13 +2,15 @@ from matplotlib import pyplot as plot
 import numpy as np
 
 if __name__ == "__main__":
-    x = np.linspace(0, 10, 100)
-    y = x * x
+    X = np.linspace(0, 10, 100)
+    Y = X
 
     # int(x)
     # round(x)
     # ceil(x)
+    Y1 = [np.int(x) for x in X]
 
-    plot.plot(x, y, label=rf"$y=x^2$")
+    plot.plot(X, Y, label=rf"$y=x$")
+    plot.plot(X, Y1, label=rf"$y=int(x)$")
     plot.legend()
     plot.show()
