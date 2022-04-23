@@ -64,8 +64,12 @@ def funkcja3():
 
 
 def podzial1(A: np.ndarray, a=90) -> (np.ndarray, np.ndarray):
-    B = np.ones(len(A))
-    C = np.ones(len(A))
+    print(f"len(A)={len(A)}")
+
+    print(f"shape(A)={np.shape(A)}")
+    split = int(np.shape(A)[0] * a / 100)
+    B = A[:split]
+    C = A[split:]
 
     return B, C
 
@@ -75,5 +79,5 @@ if __name__ == "__main__":
     # funkcja2()
 
     # funkcja3()
-    A1, A2 = podzial1(np.arange(0, 100), 70)
+    A1, A2 = podzial1(np.arange(0, 11), 40)
     print(A1, A2)
