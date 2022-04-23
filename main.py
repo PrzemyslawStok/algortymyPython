@@ -135,7 +135,7 @@ if __name__ == "__main__":
     # fun1()
     # simplePlot()
     # plot1()
-    # plot2()
+    plot2()
 
     # simple_map()
     # map_numpy()
