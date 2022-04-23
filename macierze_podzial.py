@@ -39,7 +39,32 @@ def funkcja2():
     # zad 35-89
     # zad 25-79
 
+    B = A[:, :1]
+    print(B.reshape([-1]))
+
+    A = ["x1", "x2"]
+    print(A)
+
+    X = np.arange(0, 100)
+    print(X)
+
+    print(np.array([f"x_{i}" for i in X]).reshape([10, -1]))
+
+
+def funkcja3():
+    A = np.arange(1, 10)
+    print(A)
+
+    a = 2
+
+    print(A[:a])
+    print(A[a:])
+
+    print(np.concatenate((A[:a], A[a:])))
+
 
 if __name__ == "__main__":
     # funkcja1()
-    funkcja2()
+    # funkcja2()
+
+    funkcja3()
