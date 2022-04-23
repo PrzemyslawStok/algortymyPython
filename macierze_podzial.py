@@ -63,8 +63,17 @@ def funkcja3():
     print(np.concatenate((A[:a], A[a:])))
 
 
+def podzial1(A: np.ndarray, a=90) -> (np.ndarray, np.ndarray):
+    B = np.ones(len(A))
+    C = np.ones(len(A))
+
+    return B, C
+
+
 if __name__ == "__main__":
     # funkcja1()
     # funkcja2()
 
-    funkcja3()
+    # funkcja3()
+    A1, A2 = podzial1(np.arange(0, 100), 70)
+    print(A1, A2)
