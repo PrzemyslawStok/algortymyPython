@@ -46,6 +46,17 @@ def wykres3(plot_range: np.ndarray):
     plot.show()
 
 
+def wykres4():
+    t = np.linspace(0, 100 * np.pi, 1000)
+
+    X = np.sin(t)
+    Y = np.cos(2 * t)
+
+    plot.plot(X, Y)
+    plot.show()
+
+
 if __name__ == "__main__":
     # wykres1()
-    wykres3(np.arange(1, 10))
+    # wykres3(np.arange(1, 10))
+    wykres4()
