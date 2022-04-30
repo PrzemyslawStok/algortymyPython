@@ -56,11 +56,8 @@ def wykres4():
     plot.show()
 
 
-def wykres5(d=np.pi/2.0, A=1.0, B=1.0):
-    t = np.linspace(0, 10 * np.pi, 1000)
-
-    a = 1.0
-    b = 1.0
+def wykres5(d=np.pi / 2.0, A=1.0, B=1.0, a=1, b=2):
+    t = np.linspace(-2 * np.pi, 2 * np.pi, 10000)
 
     X = A * np.sin(a * t + d)
     Y = B * np.cos(b * t)
@@ -72,4 +69,4 @@ def wykres5(d=np.pi/2.0, A=1.0, B=1.0):
 if __name__ == "__main__":
     # wykres3(np.arange(1, 10))
     # wykres4()
-    wykres5()
+    wykres5(a=2, b=5)
