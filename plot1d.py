@@ -57,7 +57,13 @@ def wykres4():
 
 
 def wykres5():
-    pass
+    t = np.linspace(0, 10 * np.pi, 1000)
+
+    X = np.sin(t)
+    Y = np.cos(2 * t)
+
+    plot.plot(X, Y)
+    plot.show()
 
 
 if __name__ == "__main__":
