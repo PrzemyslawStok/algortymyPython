@@ -20,14 +20,32 @@ def wykres1():
 
 
 def wykres2():
-    t = np.linspace(0, 2 * np.pi, 100)
-    X = np.sin(4 * t)
-    Y = np.cos(4 * t)
+    t = np.linspace(0, np.pi, 100)
+
+    X = np.sin(t)
+    Y = np.cos(t)
 
     plot.plot(X, Y)
     plot.show()
 
 
+def wykres3(plot_range: np.ndarray):
+    for range in plot_range:
+        t_max = 0.2 * range * np.pi
+        a = 0.5 * range
+
+        t = np.linspace(0, t_max, 1000)
+
+        r = a * t
+
+        X = r * np.sin(t)
+        Y = r * np.cos(t)
+
+        plot.plot(X, Y)
+
+    plot.show()
+
+
 if __name__ == "__main__":
     # wykres1()
-    wykres2()
+    wykres3(np.arange(1, 10))
