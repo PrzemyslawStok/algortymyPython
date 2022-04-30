@@ -56,7 +56,11 @@ def wykres4():
     plot.show()
 
 
+def wykres5():
+    pass
+
+
 if __name__ == "__main__":
-    # wykres1()
     # wykres3(np.arange(1, 10))
-    wykres4()
+    # wykres4()
+    wykres5()
