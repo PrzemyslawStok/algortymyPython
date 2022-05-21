@@ -77,6 +77,10 @@ def sin_matrix(A: np.ndarray):
     plot.savefig("sin.png")
 
 
+def sin_polinomial(subplot, X, Y, B: np.ndarray):
+    subplot.plot(X, Y)
+
+
 def sin_multiplot(A: np.ndarray):
     fig = plot.figure(figsize=(5 * len(A), 5), dpi=100)
     grid_spec = fig.add_gridspec(1, len(A))
@@ -86,7 +90,7 @@ def sin_multiplot(A: np.ndarray):
         X = np.linspace(-np.pi, np.pi, 100)
         Y = np.sin(A[i] * X)
 
-        subplots[i].plot(X, Y)
+        sin_polinomial(subplots[i], X, Y, np.array([1, 2, 3, 4, 5]))
 
     plot.savefig("multiplot.png")
 
