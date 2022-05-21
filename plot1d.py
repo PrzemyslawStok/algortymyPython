@@ -67,7 +67,10 @@ def wykres5(d=np.pi / 2.0, A=1.0, B=1.0, a=1, b=2):
 
 
 def sin_matrix(A: np.ndarray):
-    pass
+    X = np.linspace(0, 5, 100)
+
+    for a in A:
+        pass
 
 
 if __name__ == "__main__":
