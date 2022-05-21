@@ -73,7 +73,8 @@ def sin_matrix(A: np.ndarray):
         Y = np.sin(a * X)
         plot.plot(X, Y)
 
-    plot.show()
+    #plot.show()
+    plot.savefig("sin.png")
 
 
 if __name__ == "__main__":
