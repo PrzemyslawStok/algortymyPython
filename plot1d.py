@@ -63,10 +63,17 @@ def wykres5(d=np.pi / 2.0, A=1.0, B=1.0, a=1, b=2):
     Y = B * np.sin(b * t)
 
     plot.plot(X, Y)
-    plot.show()
+    # plot.show()
+
+
+def sin_matrix(A: np.ndarray):
+    pass
 
 
 if __name__ == "__main__":
+    # wykres1()
     # wykres3(np.arange(1, 10))
     # wykres4()
-    wykres5(a=5, b=6)
+    # wykres5(a=5, b=6)
+
+    sin_matrix(np.array([1, 2, 3, 4, 5]))
