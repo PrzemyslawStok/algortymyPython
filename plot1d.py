@@ -82,10 +82,12 @@ def sin_multiplot(A: np.ndarray):
     grid_spec = fig.add_gridspec(1, len(A))
     subplots = grid_spec.subplots()
 
-    X = np.linspace(-np.pi, np.pi, 100)
-    Y = np.sin(X)
+    for i in range(len(A)):
+        X = np.linspace(-np.pi, np.pi, 100)
+        Y = np.sin(A[i] * X)
 
-    subplots[0].plot(X, Y)
+        subplots[i].plot(X, Y)
+
     plot.savefig("multiplot.png")
 
 
