@@ -77,10 +77,23 @@ def sin_matrix(A: np.ndarray):
     plot.savefig("sin.png")
 
 
+def sin_multiplot(A: np.ndarray):
+    fig = plot.figure(figsize=(5 * len(A), 5), dpi=100)
+    grid_spec = fig.add_gridspec(1, len(A))
+    subplots = grid_spec.subplots()
+
+    X = np.linspace(-np.pi, np.pi, 100)
+    Y = np.sin(X)
+
+    subplots[0].plot(X, Y)
+    plot.savefig("multiplot.png")
+
+
 if __name__ == "__main__":
     # wykres1()
     # wykres3(np.arange(1, 10))
     # wykres4()
     # wykres5(a=5, b=6)
 
-    sin_matrix(np.array([1, 2, 3, 4, 5]))
+    # sin_matrix(np.array([1, 2, 3, 4, 5]))
+    sin_multiplot(np.array([1, 2, 3, 4, 5]))
