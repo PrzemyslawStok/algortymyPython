@@ -78,7 +78,10 @@ def sin_matrix(A: np.ndarray):
 
 
 def sin_polinomial(subplot, X, Y, a, B: np.ndarray):
-    subplot.plot(X, Y, label=rf"$y=sin({a}X)$")
+
+    for b in B:
+        subplot.plot(X, b*Y, label=rf"$y={b} sin({a}X)$")
+
     subplot.legend()
 
 
