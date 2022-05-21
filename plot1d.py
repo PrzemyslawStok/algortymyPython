@@ -70,7 +70,10 @@ def sin_matrix(A: np.ndarray):
     X = np.linspace(0, 5, 100)
 
     for a in A:
-        pass
+        Y = np.sin(a * X)
+        plot.plot(X, Y)
+
+    plot.show()
 
 
 if __name__ == "__main__":
