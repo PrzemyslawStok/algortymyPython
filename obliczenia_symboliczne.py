@@ -1,3 +1,6 @@
+from matplotlib import pyplot as plot
+import numpy as np
+
 import sympy as sp
 from sympy import pprint
 
@@ -29,3 +32,8 @@ if __name__ == "__main__":
     v_t, a_t = przyspieszenie(x_t)
     pprint(v_t)
     pprint(a_t)
+
+    x_t_f = sp.lambdify(t, x_t, "numpy")
+
+    X = np.linspace(0, 10, 100)
+    Y = x_t_f(X)
