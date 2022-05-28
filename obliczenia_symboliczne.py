@@ -45,7 +45,7 @@ if __name__ == "__main__":
     if (np.ndim(A) == 0):
         A = A * np.ones(np.shape(X))
 
-    plot.plot(X, Y, label=rf"$x(t)$")
+    plot.plot(X, Y, label="$x(t)=" + sp.latex(x_t) + "$")
     plot.plot(X, V, label=rf"$v(t)$")
     plot.plot(X, A, label=rf"$a(t)$")
     plot.legend()
