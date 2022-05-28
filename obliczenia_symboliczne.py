@@ -34,10 +34,19 @@ if __name__ == "__main__":
     pprint(a_t)
 
     x_t_f = sp.lambdify(t, x_t, "numpy")
+    v_t_f = sp.lambdify(t, v_t, "numpy")
+    a_t_f = sp.lambdify(t, a_t, "numpy")
 
     X = np.linspace(0, 10, 100)
     Y = x_t_f(X)
+    V = v_t_f(X)
+    A = a_t_f(X)
+
+    if (np.ndim(A) == 0):
+        A = A * np.ones(np.shape(X))
 
     plot.plot(X, Y, label=rf"$x(t)$")
+    plot.plot(X, V, label=rf"$v(t)$")
+    plot.plot(X, A, label=rf"$a(t)$")
     plot.legend()
     plot.show()
