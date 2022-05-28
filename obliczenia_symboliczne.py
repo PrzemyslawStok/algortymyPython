@@ -37,3 +37,7 @@ if __name__ == "__main__":
 
     X = np.linspace(0, 10, 100)
     Y = x_t_f(X)
+
+    plot.plot(X, Y, label=rf"$x(t)$")
+    plot.legend()
+    plot.show()
