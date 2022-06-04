@@ -14,7 +14,7 @@ def data(n: int = 100):
 
 
 if __name__ == "__main__":
-    X, Y_f, Y_noise = data(2)
+    X, Y_f, Y_noise = data(100)
 
     plot.plot(0, 0)
     plot.plot(X, Y_f, label="$y=sin(x)$")
@@ -31,4 +31,4 @@ if __name__ == "__main__":
 
     model.summary()
 
-
+    model.compile(optimizer="adam", loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True))
