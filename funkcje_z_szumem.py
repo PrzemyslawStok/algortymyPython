@@ -14,21 +14,24 @@ def data(n: int = 100):
 
 
 if __name__ == "__main__":
-    X, Y_f, Y_noise = data(100)
+    X, Y_f, Y_noise = data(1000)
 
     plot.plot(0, 0)
-    plot.plot(X, Y_f, label="$y=sin(x)$")
+    # plot.plot(X, Y_f, label="$y=sin(x)$")
     plot.scatter(X, Y_noise, label="$y=sin(x)$" + "z szumem")
-
-    plot.legend()
-    plot.show()
 
     model = tf.keras.Sequential()
 
-    model.add(tf.keras.layers.InputLayer(input_shape=np.shape(X)))
-    model.add(tf.keras.layers.Dense(5))
+    model.add(tf.keras.layers.InputLayer(input_shape=(1,)))
+    model.add(tf.keras.layers.Dense(10))
     model.add(tf.keras.layers.Dense(1))
 
     model.summary()
 
-    model.compile(optimizer="adam", loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True))
+    model.compile(optimizer="adam", loss='mean_squared_error')
+    plot.plot(X, np.squeeze(model(X)))
+
+    model.fit(X, Y_noise, epochs=10, batch_size=len(X))
+
+    plot.legend()
+    plot.show()
