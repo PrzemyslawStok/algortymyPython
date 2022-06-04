@@ -27,7 +27,7 @@ def przyspieszenie(x_t: sp.core.Add) -> (sp.core.Add, sp.core.Add):
 
 if __name__ == "__main__":
     t = sp.symbols("t")
-    x_t = t ** 2 + 2 * t + 2
+    x_t = t ** 2 + 2 * t / (t + 1) + 2
 
     v_t, a_t = przyspieszenie(x_t)
     pprint(v_t)
@@ -46,7 +46,7 @@ if __name__ == "__main__":
         A = A * np.ones(np.shape(X))
 
     plot.plot(X, Y, label="$x(t)=" + sp.latex(x_t) + "$")
-    plot.plot(X, V, label=rf"$v(t)$")
-    plot.plot(X, A, label=rf"$a(t)$")
+    plot.plot(X, V, label="$v(t)=" + sp.latex(v_t) + "$")
+    plot.plot(X, A, label="$a(t)=" + sp.latex(a_t) + "$")
     plot.legend()
     plot.show()
