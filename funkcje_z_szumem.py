@@ -34,7 +34,11 @@ def createModel1() -> tf.keras.Model:
     model.add(tf.keras.layers.InputLayer(input_shape=(1,)))
 
     for i in range(5):
-        pass
+        model.add(tf.keras.layers.Dense(5))
+
+    model.add(tf.keras.layers.Dense(20, activation='tanh'))
+    model.add(tf.keras.layers.Dense(2))
+    model.add(tf.keras.layers.Dense(1, activation='linear'))
 
     model.summary()
 
@@ -42,14 +46,15 @@ def createModel1() -> tf.keras.Model:
     return model
 
 
-if __name__ == "__main__":
+def fun_model():
     X, Y_f, Y_noise = data(1000)
 
     plot.plot(0, 0)
     # plot.plot(X, Y_f, label="$y=sin(x)$")
     plot.scatter(X, Y_noise, label="$y=sin(x)$" + "z szumem")
 
-    model = createModel()
+    # model = createModel()
+    model = createModel1()
     plot.plot(X, np.squeeze(model(X)), label="przed treningiem")
 
     model.fit(X, Y_noise, epochs=100, batch_size=10)
@@ -60,3 +65,12 @@ if __name__ == "__main__":
 
     plot.legend()
     plot.show()
+
+
+def imagesData():
+    pass
+
+
+if __name__ == "__main__":
+    # fun_model()
+    imagesData()
