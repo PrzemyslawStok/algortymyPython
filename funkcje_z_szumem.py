@@ -17,9 +17,24 @@ def createModel() -> tf.keras.Model:
     model = tf.keras.Sequential()
 
     model.add(tf.keras.layers.InputLayer(input_shape=(1,)))
+
     model.add(tf.keras.layers.Dense(50, activation='tanh'))
     model.add(tf.keras.layers.Dense(20, activation='tanh'))
     model.add(tf.keras.layers.Dense(1, activation='linear'))
+
+    model.summary()
+
+    model.compile(optimizer="adam", loss='mean_squared_error')
+    return model
+
+
+def createModel1() -> tf.keras.Model:
+    model = tf.keras.Sequential()
+
+    model.add(tf.keras.layers.InputLayer(input_shape=(1,)))
+
+    for i in range(5):
+        pass
 
     model.summary()
 
