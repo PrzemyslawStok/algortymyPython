@@ -74,7 +74,7 @@ if __name__ == "__main__":
     # fun_model()
     X, Y = imagesData()
     n = 10
-    plot.title(f"Na obazku zndjduje się cyfra: {Y[n]}")
+    plot.title(f"Na obazku znajduje się cyfra: {Y[n]}")
     plot.imshow(X[n])
 
     plot.show()
