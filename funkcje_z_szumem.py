@@ -67,10 +67,14 @@ def fun_model():
     plot.show()
 
 
-def imagesData():
-    pass
+def imagesData() -> (np.ndarray, np.ndarray):
+    mnist = tf.keras.datasets.mnist
+    (X, Y), (_, _) = mnist.load_data()
+    return X / 255.0, Y
 
 
 if __name__ == "__main__":
     # fun_model()
-    imagesData()
+    X, Y = imagesData()
+    plot.imshow(X[1])
+    plot.show()
