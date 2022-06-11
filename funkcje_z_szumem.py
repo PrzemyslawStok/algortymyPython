@@ -76,5 +76,8 @@ def imagesData() -> (np.ndarray, np.ndarray):
 if __name__ == "__main__":
     # fun_model()
     X, Y = imagesData()
-    plot.imshow(X[1])
+    n = 10
+    plot.title(f"Na obazku zndjduje się cyfra: {Y[n]}")
+    plot.imshow(X[n])
+
     plot.show()
