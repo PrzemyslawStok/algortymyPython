@@ -13,6 +13,20 @@ def data(n: int = 100):
     return X, Y, Y_noise
 
 
+def createModel() -> tf.keras.Model:
+    model = tf.keras.Sequential()
+
+    model.add(tf.keras.layers.InputLayer(input_shape=(1,)))
+    model.add(tf.keras.layers.Dense(50, activation='tanh'))
+    model.add(tf.keras.layers.Dense(20, activation='tanh'))
+    model.add(tf.keras.layers.Dense(1, activation='linear'))
+
+    model.summary()
+
+    model.compile(optimizer="adam", loss='mean_squared_error')
+    return model
+
+
 if __name__ == "__main__":
     X, Y_f, Y_noise = data(1000)
 
@@ -20,18 +34,14 @@ if __name__ == "__main__":
     # plot.plot(X, Y_f, label="$y=sin(x)$")
     plot.scatter(X, Y_noise, label="$y=sin(x)$" + "z szumem")
 
-    model = tf.keras.Sequential()
+    model = createModel()
+    plot.plot(X, np.squeeze(model(X)), label="przed treningiem")
 
-    model.add(tf.keras.layers.InputLayer(input_shape=(1,)))
-    model.add(tf.keras.layers.Dense(10))
-    model.add(tf.keras.layers.Dense(1))
+    model.fit(X, Y_noise, epochs=100, batch_size=10)
 
-    model.summary()
+    plot.plot(X, np.squeeze(model(X)), label="po treningu")
 
-    model.compile(optimizer="adam", loss='mean_squared_error')
-    plot.plot(X, np.squeeze(model(X)))
-
-    model.fit(X, Y_noise, epochs=10, batch_size=len(X))
+    # print(model(X))
 
     plot.legend()
     plot.show()
