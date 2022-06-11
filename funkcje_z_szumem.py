@@ -31,18 +31,15 @@ def createModel() -> tf.keras.Model:
 def createModel1() -> tf.keras.Model:
     model = tf.keras.Sequential()
 
-    model.add(tf.keras.layers.InputLayer(input_shape=(1,)))
+    model.add(tf.keras.layers.InputLayer(input_shape=(28, 28)))
+    model.add(tf.keras.layers.Flatten())
 
-    for i in range(5):
-        model.add(tf.keras.layers.Dense(5))
-
-    model.add(tf.keras.layers.Dense(20, activation='tanh'))
-    model.add(tf.keras.layers.Dense(2))
-    model.add(tf.keras.layers.Dense(1, activation='linear'))
+    model.add(tf.keras.layers.Dense(128))
+    model.add(tf.keras.layers.Dense(10))
 
     model.summary()
 
-    model.compile(optimizer="adam", loss='mean_squared_error')
+    model.compile(optimizer="adam", loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True))
     return model
 
 
@@ -81,3 +78,7 @@ if __name__ == "__main__":
     plot.imshow(X[n])
 
     plot.show()
+
+    model = createModel1()
+
+    model.fit(X, Y, epochs=10)
