@@ -1,6 +1,8 @@
 import timeit
 from random import random
 
+import numpy as np
+
 
 def f0(l):
     for i in range(1000_000):
@@ -18,6 +20,10 @@ def obliczenia(l=100_000):
         suma += A[i]
 
 
+def obliczenia_numpy(l=100_000):
+    A = np.empty(l, dtype=float)
+
+
 def zmierz_czas(f, l=100_000):
     start = timeit.default_timer()
     f(l)
@@ -27,4 +33,6 @@ def zmierz_czas(f, l=100_000):
 
 
 if __name__ == "__main__":
-    zmierz_czas(obliczenia, 100_000)
+    l = 100_000
+    zmierz_czas(obliczenia, l)
+    zmierz_czas(obliczenia_numpy, l)
