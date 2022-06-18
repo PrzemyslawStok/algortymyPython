@@ -10,7 +10,7 @@ def f0(l):
     return 0.0
 
 
-def obliczenia(l=100_000):
+def obliczenia(l=100_000) -> float:
     A = []
     for i in range(l):
         A.append(random())
@@ -19,9 +19,14 @@ def obliczenia(l=100_000):
     for i in range(len(A)):
         suma += A[i]
 
+    return suma
 
-def obliczenia_numpy(l=100_000):
-    A = np.empty(l, dtype=float)
+
+def obliczenia_numpy(l=100_000) -> float:
+    A = np.random.random(l)
+    b = np.sum(A)
+
+    return b
 
 
 def zmierz_czas(f, l=100_000):
@@ -29,7 +34,7 @@ def zmierz_czas(f, l=100_000):
     f(l)
     end = timeit.default_timer()
     t = end - start
-    print(f"czas działania: {t:0.5f}")
+    print(f"czas działania: {t:0.5f}s")
 
 
 if __name__ == "__main__":
