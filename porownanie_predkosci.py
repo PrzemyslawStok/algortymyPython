@@ -2,6 +2,7 @@ import timeit
 from random import random
 
 import numpy as np
+from numpy import ndarray
 
 
 def f0(l):
@@ -22,8 +23,18 @@ def obliczenia(l=100_000) -> float:
     return suma
 
 
-def obliczenia_numpy(l=100_000) -> float:
+def obliczenia_numpy(l=100_000) -> ndarray:
     A = np.random.random(l)
+    b = np.sum(A)
+
+    return b
+
+
+def obliczenia_numpy_petle(l=100_000) -> ndarray:
+    A = np.empty(l, dtype=float)
+    for i in range(l):
+        pass
+
     b = np.sum(A)
 
     return b
@@ -41,3 +52,4 @@ if __name__ == "__main__":
     l = 100_000
     zmierz_czas(obliczenia, l)
     zmierz_czas(obliczenia_numpy, l)
+    zmierz_czas(obliczenia_numpy_petle, l)
