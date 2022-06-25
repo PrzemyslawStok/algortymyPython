@@ -77,8 +77,8 @@ def f_arg(a, a1, *args):
 
 
 def f_kwargs(**kwargs):
-    for value, key in kwargs:
-        print(f"({value},{key})")
+    for value, key in kwargs.items():
+        print(f"{value}={key}")
 
 
 if __name__ == "__main__":
@@ -88,5 +88,4 @@ if __name__ == "__main__":
     # parametry1()
 
     f_arg(1, 2, 3, 4, 5, 6, 7)
-
-
+    f_kwargs(a=10, b=2, l=[1, 2, 3, 4, 5])
