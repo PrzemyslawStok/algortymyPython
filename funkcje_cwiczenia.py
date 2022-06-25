@@ -4,6 +4,9 @@ from random import random
 import numpy as np
 from numba import jit
 
+import tensorflow as tf
+
+
 def tuple_list():
     A = [1, 2, 3, 4, 5]
     print(A)
@@ -26,12 +29,55 @@ def tuple_list():
 
 
 def f0():
-    return 10, 1
+    return 10, (1, 2)
+
+
+def parametry0():
+    print(f0())
+
+    # tuple_list()
+
+    a, b = f0()
+    print(f"a={a}, b={b}")
+
+    a, _ = f0()
+    print(f"a={a}")
+
+    a, (b, c) = f0()
+    print(f"a={a}, b={b}, c={c}")
+
+
+def f1():
+    return (10, 2), (7, 3)
+
+
+def f2():
+    return (1, 7, (10, 2, (5, "zm")), (5, 1))
+
+
+def parametry1():
+    print(f1())
+    (_, b), (c, _) = f1()
+    print(f"b={b}, c={c}")
+
+    print(f2())
+
+    (_, _, (_, _, (_, a)), (_, _)) = f2()
+    print(a)
+
+    (_, _, (_, _, (_, a)), b) = f2()
+    print(b[1])
+
+
+def f_arg(*args):
+    for a in args:
+        print(a)
 
 
 if __name__ == "__main__":
-    print(f0())
+    # tuple_list()
+    # parametry0()
 
-    tuple_list()
+    # parametry1()
 
-
+    f_arg(1, 2)
