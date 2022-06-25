@@ -69,9 +69,16 @@ def parametry1():
     print(b[1])
 
 
-def f_arg(*args):
+def f_arg(a, a1, *args):
+    print(f"a={a}")
+    print(f"a1={a1}")
     for a in args:
         print(a)
+
+
+def f_kwargs(**kwargs):
+    for value, key in kwargs:
+        print(f"({value},{key})")
 
 
 if __name__ == "__main__":
@@ -80,4 +87,6 @@ if __name__ == "__main__":
 
     # parametry1()
 
-    f_arg(1, 2)
+    f_arg(1, 2, 3, 4, 5, 6, 7)
+
+
