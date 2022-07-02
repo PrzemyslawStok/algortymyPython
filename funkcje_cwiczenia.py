@@ -128,9 +128,12 @@ def cw1():
 def f3():
     A = []
     for i in range(10):
-        A.append(tuple(np.random.randint(0, 10, 3)))
+        A.append((tuple(np.random.randint(0, 10, 3)), 1, 2))
 
     print(A)
+
+    for (a1, a2, _), b, c in A:
+        print(f"[a1={a1} b={b} c={c}]")
 
 
 if __name__ == "__main__":
