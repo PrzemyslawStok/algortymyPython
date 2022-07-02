@@ -125,6 +125,14 @@ def cw1():
     return sum
 
 
+def f3():
+    A = []
+    for i in range(10):
+        A.append(tuple(np.random.randint(0, 10, 3)))
+
+    print(A)
+
+
 if __name__ == "__main__":
     # tuple_list()
     # parametry0()
@@ -135,4 +143,5 @@ if __name__ == "__main__":
     # f_kwargs(a=10, b=2, l=[1, 2, 3, 4, 5])
 
     # dict1()
-    print(f"suma sześcianów = {cw1()}")
+    # print(f"suma sześcianów = {cw1()}")
+    f3()
