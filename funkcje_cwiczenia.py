@@ -114,7 +114,15 @@ def cw1():
         d1[f"i{i}"] = np.random.randint(0, 10)
 
     print(d1)
-    return 0
+
+    sum = 0
+
+    for value in d1.values():
+        v = int(value)
+        print(f"{v}^3={v ** 3}")
+        sum += v ** 3
+
+    return sum
 
 
 if __name__ == "__main__":
@@ -127,4 +135,4 @@ if __name__ == "__main__":
     # f_kwargs(a=10, b=2, l=[1, 2, 3, 4, 5])
 
     # dict1()
-    cw1()
+    print(f"suma sześcianów = {cw1()}")
