@@ -81,11 +81,50 @@ def f_kwargs(**kwargs):
         print(f"{value}={key}")
 
 
+def dict1() -> 0:
+    d0 = {"a2": 100}
+    d0["a1"] = 10
+    d0[0] = 100
+    d0["0"] = "1000"
+
+    print(d0["a1"])
+    print(d0["0"])
+    d0["b"] = (10, 2)
+
+    print(d0)
+
+    for item in d0.items():
+        print(item)
+
+    for key in d0.keys():
+        print(key)
+
+    for value in d0.values():
+        print(value)
+
+    for key, value in d0.items():
+        print(f"klucz: {key}, wartość: {value}")
+
+    return 0
+
+
+def cw1():
+    d1 = {}
+    for i in range(10):
+        d1[f"i{i}"] = np.random.randint(0, 10)
+
+    print(d1)
+    return 0
+
+
 if __name__ == "__main__":
     # tuple_list()
     # parametry0()
 
     # parametry1()
 
-    f_arg(1, 2, 3, 4, 5, 6, 7)
-    f_kwargs(a=10, b=2, l=[1, 2, 3, 4, 5])
+    # f_arg(1, 2, 3, 4, 5, 6, 7)
+    # f_kwargs(a=10, b=2, l=[1, 2, 3, 4, 5])
+
+    # dict1()
+    cw1()
