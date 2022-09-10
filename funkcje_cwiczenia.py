@@ -140,18 +140,22 @@ def cw2() -> ((int, int), (int, int, int)):
     return (1, 2), (5, 6, 7)
 
 
-def f5():
+def f5() -> (list, int):
     tab = []
+    sum = 0
     for i in range(10):
-        tab.append(((i, 10, 1), (1, 2)))
+        a = np.random.randint(0, 10)
+        sum += a
+        tab.append(((a, 10, 1), (1, 2)))
 
-    return tab
+    return tab, sum
 
 
-def cw5(tab: list):
+def cw5(tab: list, suma_kontrolna: int):
     sum = 0
     for ((i, _, _), _) in tab:
         sum += i
+
 
     return sum
 
@@ -173,4 +177,4 @@ if __name__ == "__main__":
     print(b)
 
     tab = f5()
-    print(cw5(tab))
+    print(cw5(f5()))
