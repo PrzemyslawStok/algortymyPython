@@ -150,8 +150,8 @@ def f5():
 
 def cw5(tab: list):
     sum = 0
-    for element in tab:
-        pass
+    for ((i, _, _), _) in tab:
+        sum += i
 
     return sum
 
@@ -173,4 +173,4 @@ if __name__ == "__main__":
     print(b)
 
     tab = f5()
-    print(tab)
+    print(cw5(tab))
