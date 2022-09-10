@@ -145,8 +145,8 @@ def f5() -> (list, int):
     sum = 0
     for i in range(10):
         a = np.random.randint(0, 10)
-        sum += a
-        tab.append(((a, 10, 1), (1, 2)))
+        sum += 2 * a
+        tab.append(((a, 10, a), (1, 2)))
 
     return tab, sum
 
@@ -155,7 +155,6 @@ def cw5(tab: list, suma_kontrolna: int):
     sum = 0
     for ((i, _, _), _) in tab:
         sum += i
-
 
     return sum
 
