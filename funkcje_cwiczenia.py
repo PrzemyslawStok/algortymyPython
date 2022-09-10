@@ -136,6 +136,10 @@ def f3():
         print(f"[a1={a1} b={b} c={c}]")
 
 
+def cw2() -> ((int, int), (int, int, int)):
+    return (1, 2), (5, 6, 7)
+
+
 if __name__ == "__main__":
     # tuple_list()
     # parametry0()
@@ -148,3 +152,5 @@ if __name__ == "__main__":
     # dict1()
     # print(f"suma sześcianów = {cw1()}")
     f3()
+
+    a = cw2()
