@@ -140,6 +140,22 @@ def cw2() -> ((int, int), (int, int, int)):
     return (1, 2), (5, 6, 7)
 
 
+def f5():
+    tab = []
+    for i in range(10):
+        tab.append(((i, 10, 1), (1, 2)))
+
+    return tab
+
+
+def cw5(tab: list):
+    sum = 0
+    for element in tab:
+        pass
+
+    return sum
+
+
 if __name__ == "__main__":
     # tuple_list()
     # parametry0()
@@ -153,4 +169,8 @@ if __name__ == "__main__":
     # print(f"suma sześcianów = {cw1()}")
     f3()
 
-    a = cw2()
+    a, b = cw2()
+    print(b)
+
+    tab = f5()
+    print(tab)
