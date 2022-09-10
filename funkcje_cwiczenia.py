@@ -151,7 +151,8 @@ def f5() -> (list, int):
     return tab, sum
 
 
-def cw5(tab: list, suma_kontrolna: int):
+def cw5(tab_s: list):
+    tab, suma_kontrolna = tab_s
     sum = 0
     for ((i, _, _), _) in tab:
         sum += i
